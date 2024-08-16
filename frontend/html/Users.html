@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Centro de Acopio</title>
+    <link rel="stylesheet" href="/Frontend/Css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Centro de Acopio</div>
+            <ul>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./reportes.html">Reportes</a></li>
+                <li><a href="./actividades.html">Actividades</a></li>
+                <li><a href="./equipos.html">Equipos</a></li>
+                <li><a href="./materiales.html">Materiales</a></li>
+                <li><a href="./usuarios.html">Usuarios</a></li>
+                <li><a href="#" id="logout">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Gestión de Usuarios</h1>
+        
+        <section class="form-section">
+            <h2>Agregar/Editar Usuario</h2>
+            <form id="usuarioForm">
+                <input type="hidden" id="usuarioId">
+                <label for="nombreUsuario">Nombre:</label>
+                <input type="text" id="nombreUsuario" required>
+                <label for="correoUsuario">Correo:</label>
+                <input type="email" id="correoUsuario" required>
+                <label for="rolUsuario">Rol:</label>
+                <select id="rolUsuario" required>
+                    <option value="admin">Administrador</option>
+                    <option value="operador">Operador</option>
+                    <option value="supervisor">Supervisor</option>
+                </select>
+                <button type="submit">Guardar Usuario</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Lista de Usuarios</h2>
+            <table id="usuariosTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se cargarán dinámicamente los usuarios -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bitacora de Actividades del Centro de Acopio de Carbón Térmico. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/Frontend/Js/User.js"></script>
+</body>
+</html>

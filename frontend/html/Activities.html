@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades - Centro de Acopio</title>
+    <link rel="stylesheet" href="/Frontend/Css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Centro de Acopio</div>
+            <ul>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./reportes.html">Reportes</a></li>
+                <li><a href="./actividades.html">Actividades</a></li>
+                <li><a href="./equipos.html">Equipos</a></li>
+                <li><a href="./materiales.html">Materiales</a></li>
+                <li><a href="./usuarios.html">Usuarios</a></li>
+                <li><a href="#" id="logout">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Gestión de Actividades</h1>
+        
+        <section class="form-section">
+            <h2>Agregar/Editar Actividad</h2>
+            <form id="actividadForm">
+                <input type="hidden" id="actividadId">
+                <label for="nombreActividad">Nombre:</label>
+                <input type="text" id="nombreActividad" required>
+                <label for="descripcionActividad">Descripción:</label>
+                <textarea id="descripcionActividad" rows="3"></textarea>
+                <button type="submit">Guardar Actividad</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Lista de Actividades</h2>
+            <table id="actividadesTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se cargarán dinámicamente las actividades -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Centro de Acopio de Carbón Térmico. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/Frontend/Js/Activities.js" ></script>
+</body>
+</html>

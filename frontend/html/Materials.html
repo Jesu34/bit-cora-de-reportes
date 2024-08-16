@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales - Centro de Acopio</title>
+    <link rel="stylesheet" href="/Frontend/Css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Centro de Acopio</div>
+            <ul>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./reportes.html">Reportes</a></li>
+                <li><a href="./actividades.html">Actividades</a></li>
+                <li><a href="./equipos.html">Equipos</a></li>
+                <li><a href="./materiales.html">Materiales</a></li>
+                <li><a href="./usuarios.html">Usuarios</a></li>
+                <li><a href="#" id="logout">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Gestión de Materiales</h1>
+        
+        <section class="form-section">
+            <h2>Agregar/Editar Material</h2>
+            <form id="materialForm">
+                <input type="hidden" id="materialId">
+                <label for="nombreMaterial">Nombre:</label>
+                <input type="text" id="nombreMaterial" required>
+                <label for="descripcionMaterial">Descripción:</label>
+                <textarea id="descripcionMaterial" rows="3"></textarea>
+                <button type="submit">Guardar Material</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Lista de Materiales</h2>
+            <table id="materialesTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se cargarán dinámicamente los materiales -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bitacora de Actividades del Centro de Acopio de Carbón Térmico. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/Frontend/Js/Materials.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - Centro de Acopio</title>
+    <link rel="stylesheet" href="/Frontend/Css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Centro de Acopio</div>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="./Login.html">Iniciar Sesión</a></li>
+                <li><a href="./Register.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="register-form">
+            <h2>Registrarse</h2>
+            <form id="registerForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="rol">Rol:</label>
+                <select id="rol" name="rol" required>
+                    <option value="">Seleccionar rol</option>
+                    <option value="admin">Administrador</option>
+                    <option value="operador">Operador</option>
+                    <option value="supervisor">Supervisor</option>
+                </select>
+
+                <button type="submit">Registrarse</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bitacora de Actividades del Centro de Acopio de Carbón Térmico. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/Frontend/Js/Script.js" ></script>
+</body>
+</html>
