@@ -21,14 +21,15 @@
           </div>
           <section id="loginForm" class="login-form active-form">
             <h2>Iniciar Sesión</h2>
-            <form>
+            <!-- el action es el archivo al que va a llamar y mandar los parametros del formulario -->
+            <form action="procesar_login.php" method="post" >
               <label for="email">Correo electrónico:</label>
-              <input type="email" id="emailLogin" name="email" required />
+              <input type="email" id="emailLogin" name="correo" required />
 
               <label for="password">Contraseña:</label>
-              <input type="password" id="passwordLogin" name="password" required />
+              <input type="password" id="passwordLogin" name="clave" required />
 
-              <button type="submit"><a href="../html/Index.html">Iniciar Sesión</a></button>
+              <button type="submit">Iniciar Sesión</button>
             </form>
           </section>
           <section id="registerForm" class="register-form">
