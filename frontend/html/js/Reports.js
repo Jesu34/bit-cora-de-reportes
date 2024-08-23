@@ -46,24 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return row;
     }
 
-    function editarReporte(id) {
-        // Implementar lógica de edición
-        console.log(`Editando reporte con ID: ${id}`);
-    }
 
-    function eliminarReporte(id) {
-        if (confirm('¿Estás seguro de que quieres eliminar este reporte?')) {
-            fetch(`${REPORTES_ENDPOINT}/${id}`, { method: 'DELETE' })
-                .then(response => {
-                    if (response.ok) {
-                        cargarReportes(); // Recargar la lista después de eliminar
-                    } else {
-                        throw new Error('Error al eliminar el reporte');
-                    }
-                })
-                .catch(error => manejarError('Error al eliminar reporte', error));
-        }
-    }
 
     function configurarEventListeners() {
         logoutButton.addEventListener('click', cerrarSesion);
