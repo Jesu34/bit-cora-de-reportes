@@ -34,16 +34,16 @@
           </section>
           <section id="registerForm" class="register-form">
             <h2>Registrarse</h2>
-            <form>
+            <form action="guardar_usuario.php" method="post">
               <label for="nombre">Nombre:</label>
               <br />
               <input type="text" id="nombre" name="nombre" required />
                 <br />
               <label for="email">Correo electrónico:</label>
-              <input type="email" id="emailRegister" name="email" required />
+              <input type="email" id="emailRegister" name="correo" required />
 
               <label for="password">Contraseña:</label>
-              <input type="password" id="passwordRegister" name="password" required />
+              <input type="password" id="passwordRegister" name="clave" required />
                 <br />
               <label for="rol">Rol:</label>
               <br />
@@ -54,7 +54,7 @@
                 <option value="supervisor">Supervisor</option>
               </select>
 
-              <button type="submit"><a href="../html/Login.html">Registrarse</a></button>
+              <button type="submit">Registrarse</button>
             </form>
           </section>
         </div>
