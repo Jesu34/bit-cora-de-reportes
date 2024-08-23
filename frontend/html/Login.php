@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iniciar Sesión - Centro de Acopio</title>
-    <link rel="stylesheet" href="../css/LoginandRegister.css" />
+    <link rel="stylesheet" href="css/LoginandRegister.css" />
   </head>
   <body>
     <div class="container">
@@ -61,6 +61,6 @@
       </div>
     </div>
 
-    <script src="../js/toggleForms.js"></script>
+    <script src="js/toggleForms.js"></script>
   </body>
 </html>
