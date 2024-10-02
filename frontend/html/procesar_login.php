@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
     $_SESSION["nombre"] = $row["nombre"];
     $_SESSION["correo"] = $row["correo"];
     $_SESSION["rol"] = $row["rol"];
-    header('Location: Dashboard.php');// redireccionamos
+    header('Location: dashboard.php');// redireccionamos
 
   }
 } else {

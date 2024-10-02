@@ -11,7 +11,7 @@
         <nav>
             <div class="logo">Centro de Acopio</div>
             <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="reports.html">Reportes</a></li>
                 <li><a href="activities.html">Actividades</a></li>
                 <li><a href="teams.html">Equipos</a></li>
@@ -27,14 +27,14 @@
         
         <section class="form-section">
             <h2>Agregar/Editar Equipo</h2>
-            <form id="equipoForm">
+            <form id="equipoForm" action="guardar-equipo.php" method="post" >
                 <input type="hidden" id="equipoId">
                 <label for="nombreEquipo">Nombre:</label>
-                <input type="text" id="nombreEquipo" required>
+                <input type="text" id="nombreEquipo" name="nombreEquipo" required>
                 <label for="descripcionEquipo">Descripción:</label>
-                <textarea id="descripcionEquipo" rows="3"></textarea>
+                <textarea id="descripcionEquipo" rows="3" name="descripcionEquipo" ></textarea>
                 <label for="estadoEquipo">Estado:</label>
-                <select id="estadoEquipo" required>
+                <select id="estadoEquipo" name="estadoEquipo" required>
                     <option value="operativo">Operativo</option>
                     <option value="en mantenimiento">En mantenimiento</option>
                     <option value="fuera de servicio">Fuera de servicio</option>
@@ -57,6 +57,26 @@
                 </thead>
                 <tbody>
                     <!-- Aquí se cargarán dinámicamente los equipos -->
+                    <?php
+                include "conexion.php"; //importa la conexion
+                $sql = "SELECT id, nombreEquipo, descripcionEquipo, estadoEquipo FROM equipos";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row["id"] . "</td>";
+                        echo "<td>" . $row["nombreEquipo"] . "</td>";
+                        echo "<td>" . $row["descripcionEquipo"] . "</td>";
+                        echo "<td>" . $row["estadoEquipo"] . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "0 results";
+                }
+                $conn->close();
+                ?>
                 </tbody>
             </table>
         </section>
@@ -66,6 +86,5 @@
         <p>&copy; 2024 Bitacora de Actividades del Centro de Acopio de Carbón Térmico. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/teams.js"></script>
 </body>
 </html>

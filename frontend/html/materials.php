@@ -11,7 +11,7 @@
         <nav>
             <div class="logo">Centro de Acopio</div>
             <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="reports.html">Reportes</a></li>
                 <li><a href="activities.html">Actividades</a></li>
                 <li><a href="teams.html">Equipos</a></li>
@@ -27,12 +27,12 @@
         
         <section class="form-section">
             <h2>Agregar/Editar Material</h2>
-            <form id="materialForm">
+            <form id="materialForm" action="guardar-materiales.php" method="post" >
                 <input type="hidden" id="materialId">
                 <label for="nombreMaterial">Nombre:</label>
-                <input type="text" id="nombreMaterial" required>
+                <input type="text" id="nombreMaterial" name="nombreMaterial" required>
                 <label for="descripcionMaterial">Descripción:</label>
-                <textarea id="descripcionMaterial" rows="3"></textarea>
+                <textarea id="descripcionMaterial" name="descripcionMaterial" rows="3"></textarea>
                 <button type="submit">Guardar Material</button>
             </form>
         </section>
@@ -45,11 +45,31 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Descripción</th>
-                        <th>Acciones</th>
+                        <th>Fecha</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Aquí se cargarán dinámicamente los materiales -->
+                    <?php
+                include "conexion.php"; //importa la conexion
+                $sql = "SELECT id, nombreMaterial, descripcionMaterial, fecha FROM materiales";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row["id"] . "</td>";
+                        echo "<td>" . $row["nombreMaterial"] . "</td>";
+                        echo "<td>" . $row["descripcionMaterial"] . "</td>";
+                        echo "<td>" . $row["fecha"] . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "0 results";
+                }
+                $conn->close();
+                ?>
                 </tbody>
             </table>
         </section>
@@ -59,6 +79,5 @@
         <p>&copy; 2024 Bitacora de Actividades del Centro de Acopio de Carbón Térmico. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="js/materials.js"></script>
 </body>
 </html>
