@@ -30,7 +30,10 @@
             <form id="materialForm" action="guardar-materiales.php" method="post" >
                 <input type="hidden" id="materialId">
                 <label for="nombreMaterial">Nombre:</label>
-                <input type="text" id="nombreMaterial" name="nombreMaterial" required>
+                <select id="nombreMaterial" name="nombreMaterial" required>
+                    <option value="estandar1" >estandar1</option>
+                    <option value="estandar2" >estandar2</option>
+                </select>
                 <label for="descripcionMaterial">Descripción:</label>
                 <textarea id="descripcionMaterial" name="descripcionMaterial" rows="3"></textarea>
                 <button type="submit">Guardar Material</button>
